@@ -1,0 +1,29 @@
+{
+  "name": "eat-da-burger-app",
+  "version": "1.0.0",
+  "description": "This app allows users to create burgers to add to the list of burgers and also \"eat\" burgers off of that list.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sali1390/burger-app.git"
+  },
+  "author": "Saleema Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sali1390/burger-app/issues"
+  },
+  "homepage": "https://github.com/sali1390/burger-app#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0"
+  }
+}
