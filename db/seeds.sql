@@ -1,3 +1,3 @@
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Shaan wants to read minds.');
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('John wins the lottery.');
-INSERT INTO burgers (burger_name, devoured, date) VALUES ('Kelly wishes for a room full of kittens');
+INSERT INTO burgers (burger_name, devoured) VALUES ('Bacon Cheeseburger', false);
+INSERT INTO burgers (burger_name, devoured) VALUES ('BBQ Burger', false);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Veggie Burger', false);
