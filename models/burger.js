@@ -6,5 +6,8 @@ module.exports = {
     },
     insertOne: function(burgerName, callback){
         orm.insertOne('burgers', burgerName, callback); 
+    },
+    updateOne: function(id, callback){
+        orm.updateOne(id, callback)
     }
 }

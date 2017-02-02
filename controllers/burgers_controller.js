@@ -14,18 +14,18 @@ module.exports = function(app, PORT) {
 	});
     
     app.post('/', function(req, res){
-//        var burgerName = req.body.newBurger;
-//        burger.insertOne(burgerName, function(err, data){
-////            console.log(burgerName)
-//            
-//            res.redirect('/');
-//        })
-        console.log(req.body)
-    });
+        var burgerName = req.body.newBurger;
+        burger.insertOne(burgerName, function(err, data){
+            
+        res.redirect('/');
+        })
+    });  
     
-//    app.post('/:id', function(req, res){
-//        var id = req.body.id;
-//        var burger_name = req.body.burger_name;
-//        
-//    })
+    app.post('/:id', function(req, res){
+        var id = req.params.id;
+        console.log(id)
+        burger.updateOne(id, function(req,res){
+            console.log(res)
+        })
+    })
 }
