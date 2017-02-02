@@ -1,46 +1,48 @@
-<div class="row">
-    <div class="col-lg-4">
-        <h4>Available to Eat</h4>
-        {{#each burgers}}
-            {{#if devoured}}
-            {{else}}
-                <p>{{this.id}}. {{this.burger_name}}</p>
-                <div>
-		  	   <!-- Form to delete the burger. The post will send the burger's id to the server -->
-				<form action="/eat/{{this.id}}" method="POST">
-					<input type="hidden" name="id" value="{{this.id}}">
-					<button type="submit">EAT IT</button>
-				</form>
-		  	</div>
-            {{/if}}
-        {{/each}}
+<div class="container">
+    <div class="row">
+        <div class="col-s4 offset-s2">
+            <h4>Available to Eat</h4>
+            {{#each burgers}}
+                {{#if devoured}}
+                {{else}}
+                    <p>{{this.id}}. {{this.burger_name}}</p>
+                    <div>
+                   <!-- Form to delete the burger. The post will send the burger's id to the server -->
+                    <form action="/eat/{{this.id}}" method="POST">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <button type="submit">EAT IT</button>
+                    </form>
+                </div>
+                {{/if}}
+            {{/each}}
+        </div>
+        <div class="col-s4">
+            <h4>Devoured</h4>
+            {{#each burgers}}
+                {{#if devoured}}
+                    <p>{{this.id}}. {{this.burger_name}}</p>
+                    <div>
+                   <!-- Form to delete the burger. The post will send the burger's id to the server -->
+                    <form action="/throwup/{{this.id}}" method="POST">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <button type="submit">Throw it Up</button>
+                    </form>
+                </div>
+                {{else}}
+                {{/if}}
+            {{/each}}
+        </div>
     </div>
-    <div class="col-log-4">
-        <h4>Devoured</h4>
-        {{#each burgers}}
-            {{#if devoured}}
-                <p>{{this.id}}. {{this.burger_name}}</p>
-                <div>
-		  	   <!-- Form to delete the burger. The post will send the burger's id to the server -->
-				<form action="/throwup/{{this.id}}" method="POST">
-					<input type="hidden" name="id" value="{{this.id}}">
-					<button type="submit">Throw it Up</button>
-				</form>
-		  	</div>
-            {{else}}
-            {{/if}}
-        {{/each}}
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-10">
-        <form class="create-form" action="/" method="POST">
-            <div class="form-group">
-                <label for="newBurger">Submit a New Burger:</label>
-                <input type="text" id="newBurger" name="newBurger">
-            </div>
+    <div class="row">
+        <div class="col-s10 offset-s1">
+            <form class="create-form" action="/" method="POST">
+                <div class="form-group">
+                    <label for="newBurger">Submit a New Burger:</label>
+                    <input type="text" id="newBurger" name="newBurger">
+                </div>
 
-            <button type="submit">Add</button>
-        </form>
+                <button type="submit">Add</button>
+            </form>
+        </div>
     </div>
 </div>
