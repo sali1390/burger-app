@@ -1,48 +1,59 @@
-<div class="container">
-    <div class="row">
-        <div class="col s4 offset-s2 burger-box">
-            <h4>Available to Eat</h4>
-            {{#each burgers}}
-                {{#if devoured}}
-                {{else}}
-                    <p>{{this.id}}. {{this.burger_name}}</p>
-                    <div>
-                   <!-- Form to delete the burger. The post will send the burger's id to the server -->
-                    <form action="/eat/{{this.id}}" method="POST">
-                        <input type="hidden" name="id" value="{{this.id}}">
-                        <button type="submit">EAT IT</button>
-                    </form>
-                </div>
-                {{/if}}
-            {{/each}}
-        </div>
-        <div class="col s4 burger-box">
-            <h4>Devoured</h4>
-            {{#each burgers}}
-                {{#if devoured}}
-                    <p>{{this.id}}. {{this.burger_name}}</p>
-                    <div>
-                   <!-- Form to delete the burger. The post will send the burger's id to the server -->
-                    <form action="/throwup/{{this.id}}" method="POST">
-                        <input type="hidden" name="id" value="{{this.id}}">
-                        <button type="submit">Throw it Up</button>
-                    </form>
-                </div>
-                {{else}}
-                {{/if}}
-            {{/each}}
-        </div>
+<div class="row nav">
+    <div class="col s12">
+        <img src="assets/img/ribbon.png" width="140" class="logo">
     </div>
-    <div class="row">
-        <div class="col s6 offset-s3">
-            <form class="create-form" action="/" method="POST">
-                <div class="form-group">
-                    <label for="newBurger">Enter a burger you would like to eat:</label>
-                    <input type="text" id="newBurger" name="newBurger">
+</div>
+<div class="row">
+    <div class="col s3 offset-s3 burger-box">
+        <h4 class="titles">Available to Eat</h4>
+        {{#each burgers}}
+            {{#if devoured}}
+            {{else}}
+                <div class="row">
+                    <div class="col s8">
+                        <p class="bodyText">{{this.burger_name}}</p>
+                    </div>
+                    <div class="col s4">
+                        <!-- Form to delete the burger. The post will send the burger's id to the server -->
+                        <form action="/eat/{{this.id}}" method="POST">
+                            <input type="hidden" name="id" value="{{this.id}}">   
+                            <button class="btn waves-effect waves-light center-align" type="submit" name="action">EAT IT</button>
+                        </form>
+                    </div>
                 </div>
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="col s3 burger-box">
+        <h4 class="titles">Devoured</h4>
+        {{#each burgers}}
+            {{#if devoured}}
+                <div class="row">
+                    <div class="col s6">
+                        <p class="bodyText">{{this.burger_name}}</p>
+                    </div>
+                    <div class="col s6">
+                        <!-- Form to delete the burger. The post will send the burger's id to the server -->
+                        <form action="/throwup/{{this.id}}" method="POST">
+                            <input type="hidden" name="id" value="{{this.id}}">   
+                            <button class="btn waves-effect waves-light center-align" type="submit" name="action">UN-EAT</button>
+                        </form>
+                    </div>
+                </div>
+            {{else}}
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
+<div class="row">
+    <div class="col s4 offset-s4">
+        <form class="create-form" action="/" method="POST">
+            <div class="form-group">
+                <label for="newBurger" class="bodyText">Enter a burger you would like to eat:</label>
+                <input type="text" id="newBurger" name="newBurger">
+            </div>
 
-                <button type="submit">Add</button>
-            </form>
-        </div>
+            <button class="btn waves-effect waves-light center-align" type="submit" name="action">ADD</button>
+        </form>
     </div>
 </div>
