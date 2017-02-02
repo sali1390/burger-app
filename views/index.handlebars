@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-s4 offset-s2">
+        <div class="col s4 offset-s2">
             <h4>Available to Eat</h4>
             {{#each burgers}}
                 {{#if devoured}}
@@ -16,7 +16,7 @@
                 {{/if}}
             {{/each}}
         </div>
-        <div class="col-s4">
+        <div class="col s4">
             <h4>Devoured</h4>
             {{#each burgers}}
                 {{#if devoured}}
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-s10 offset-s1">
+        <div class="col s10 offset-s1">
             <form class="create-form" action="/" method="POST">
                 <div class="form-group">
                     <label for="newBurger">Submit a New Burger:</label>
