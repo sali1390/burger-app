@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-lg-4">
+        <h4>Available to Eat</h4>
+        {{#each burgers}}
+            {{#if devoured}}
+            {{else}}
+                <p>{{this.id}}. {{this.burger_name}} <button href="/{{this.id}}">EAT IT</button></p>
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="col-log-4">
+        <h4>Devoured</h4>
+        {{#each burgers}}
+            {{#if devoured}}
+                <p>{{this.id}}. {{this.burger_name}} <button>THROW IT UP</button></p>
+            {{else}}
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-10">
+        <form class="create-form" action="/" method="POST">
+            <div class="form-group">
+                <label for="newBurger">Submit a New Burger:</label>
+                <input type="text" id="newBurger" name="newburger">
+            </div>
+
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</div>

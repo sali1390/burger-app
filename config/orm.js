@@ -1,13 +1,13 @@
-var connection = require('connection.js');
+var connection = require('./connection.js');
 
-var orm = {
-    selectAll: function(){
-        connection.query('SELECT * FROM burgers', function(err, result){
-            
-        });
+module.exports = {
+    selectAll: function(tableName, callback){
+        connection.query('SELECT * FROM ' + tableName, callback);
     },
-    insertOne: function(){},
-    updateOne: function(){}
+    insertOne: function(tableName, burgerName, callback){
+        connection.query('INSERT INTO ' + tableName + ' (burger_name, devoured) VALUES (?, ?)', [burgerName, 0], callback)
+    },
+//    updateOne: function(tableName, id, devoured, callback){
+//        connection.query('UPDATE burgers SET ? WHERE id = ?', [{devoured: devoured}, id])
+//    }
 };
-
-module.export = orm;
