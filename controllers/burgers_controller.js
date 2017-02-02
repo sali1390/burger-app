@@ -35,7 +35,5 @@ module.exports = function(app, PORT) {
             
         res.redirect('/');
         })
-    });
-    
-    
+    });  
 }

@@ -9,5 +9,8 @@ module.exports = {
     },
     eatOne: function(tableName, id, callback){
         connection.query('UPDATE ' + tableName + ' SET devoured = 1 WHERE id = ?', id, callback)
-    }
+    },
+    throwUpOne: function(tableName, id, callback){
+        connection.query('UPDATE ' + tableName + ' SET devoured = 0 WHERE id = ?', id, callback)
+    },
 };
