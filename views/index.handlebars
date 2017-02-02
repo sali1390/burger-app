@@ -7,7 +7,7 @@
                 <p>{{this.id}}. {{this.burger_name}}</p>
                 <div>
 		  	   <!-- Form to delete the burger. The post will send the burger's id to the server -->
-				<form action="/{{this.id}}" method="POST">
+				<form action="/eat/{{this.id}}" method="POST">
 					<input type="hidden" name="id" value="{{this.id}}">
 					<button type="submit">EAT IT</button>
 				</form>
@@ -19,7 +19,14 @@
         <h4>Devoured</h4>
         {{#each burgers}}
             {{#if devoured}}
-                <p>{{this.id}}. {{this.burger_name}} <button>THROW IT UP</button></p>
+                <p>{{this.id}}. {{this.burger_name}}</p>
+                <div>
+		  	   <!-- Form to delete the burger. The post will send the burger's id to the server -->
+				<form action="/throwup/{{this.id}}" method="POST">
+					<input type="hidden" name="id" value="{{this.id}}">
+					<button type="submit">Throw it Up</button>
+				</form>
+		  	</div>
             {{else}}
             {{/if}}
         {{/each}}

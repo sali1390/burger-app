@@ -7,7 +7,10 @@ module.exports = {
     insertOne: function(burgerName, callback){
         orm.insertOne('burgers', burgerName, callback); 
     },
-    updateOne: function(id, callback){
-        orm.updateOne(id, callback)
+    eatOne: function(id, callback){
+        orm.eatOne('burgers', id, callback)
+    },
+    throwUpOne: function(id, callback){
+        orm.throwUpOne('burgers', id, callback)
     }
 }

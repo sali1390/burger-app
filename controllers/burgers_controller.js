@@ -21,11 +21,21 @@ module.exports = function(app, PORT) {
         })
     });  
     
-    app.post('/:id', function(req, res){
+    app.post('/eat/:id', function(req, res){
         var id = req.params.id;
-        console.log(id)
-        burger.updateOne(id, function(req,res){
-            console.log(res)
+        burger.eatOne(id, function(err, data){
+            
+        res.redirect('/');
         })
-    })
+    });
+    
+    app.post('/throwup/:id', function(req, res){
+        var id = req.params.id;
+        burger.throwUpOne(id, function(err, data){
+            
+        res.redirect('/');
+        })
+    });
+    
+    
 }

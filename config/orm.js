@@ -7,7 +7,7 @@ module.exports = {
     insertOne: function(tableName, burgerName, callback){
         connection.query('INSERT INTO ' + tableName + ' (burger_name, devoured) VALUES (?, ?)', [burgerName, 0], callback)
     },
-    updateOne: function(tableName, id, callback){
-        connection.query('UPDATE burgers SET ? WHERE id = ?', [{devoured: 1}, id])
+    eatOne: function(tableName, id, callback){
+        connection.query('UPDATE ' + tableName + ' SET devoured = 1 WHERE id = ?', id, callback)
     }
 };
