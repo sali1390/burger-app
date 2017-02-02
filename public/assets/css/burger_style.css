@@ -2,3 +2,7 @@ body {
     background-color: bisque;
     background-image: url("../img/bg.jpeg");
 }
+
+#burger-box {
+    background-color: rgb(255,255,255, .8);
+}
